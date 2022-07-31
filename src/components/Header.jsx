@@ -1,8 +1,9 @@
 import React from "react";
 import logo from '../assets/img/logo.png'
+import {Link } from 'react-router-dom'
 function Header() {
   return (
-    <header className="header top-0 sticky shadow-md">
+    <header className="header top-0 sticky shadow-md z-10">
       <nav className="navbar navbar-expand-lg header-nav">
         <div className="navbar-header">
           <a id="mobile_btn" href="javascript:void(0);">
@@ -12,43 +13,24 @@ function Header() {
               <span></span>
             </span>
           </a>
-          <a href="index.html" className="navbar-brand logo">
+          <Link to="/" className="navbar-brand logo">
             <img src={logo} className="img-fluid" alt="Logo" />
-          </a>
+          </Link>
         </div>
         <div className="main-menu-wrapper">
           <div className="menu-header">
-            <a href="index.html" className="menu-logo">
+            <Link to="/" className="menu-logo">
               <img src={logo} className="img-fluid" alt="Logo" />
-            </a>
+            </Link>
             <a id="menu_close" className="menu-close" href="javascript:void(0);">
               <i className="fas fa-times"></i>
             </a>
           </div>
           <ul className="main-nav">
             <li className="has-submenu">
-              <a href="#">Home </a>
+              <Link to="/">Home </Link>
             </li>
-            <li className="has-submenu ">
-              <a href="#">Doctors </a>
-            </li>
-            <li className="has-submenu ">
-              <a href="#">Patients </a>
-            </li>
-            <li className="has-submenu ">
-              <a href="#">Pharmacy </a>
-            </li>
-            <li className="has-submenu active">
-              <a href="#">Pages </a>
-            </li>
-            <li className="has-submenu ">
-              <a href="#">Blog </a>
-            </li>
-            <li className="has-submenu">
-              <a href="#" target="_blank">
-                Admin
-              </a>
-            </li>
+          
           </ul>
         </div>
         <ul className="nav header-navbar-rht">
@@ -61,9 +43,9 @@ function Header() {
               <p className="contact-info-header"> +1 315 369 5943</p>
             </div>
             <li className="nav-item">
-              <a className="nav-link header-login" href="login.html">
+              <Link className="nav-link header-login" to="login">
                 login / Signup
-              </a>
+              </Link>
             </li>
           </li>
         </ul>
