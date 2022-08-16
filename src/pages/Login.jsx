@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  
+ 
 
   async function loginUser(event) {
+    console.log(email,password)
     event.preventDefault();
     const response = await fetch("http://localhost:4000/api/users/login", {
       method: "POST",

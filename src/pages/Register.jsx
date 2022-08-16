@@ -1,23 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 function Register() {
-  const [isDoctor, setIsDoctor] = useState(false);
   const [fullName, setFullName] = useState("");
   const [userName, setUserName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("Patient");
-
-  const SetIsDoctor = () => {
-    debugger;
-    setIsDoctor(!isDoctor);
-    if (!isDoctor) {
-      setRole("Doctor");
-    } else {
-      setRole("Patient");
-    }
-  };
 
   async function registerUser(event) {
     event.preventDefault();
@@ -60,15 +49,7 @@ function Register() {
                 </div>
                 <div className="col-md-12 col-lg-6 login-right">
                   <div className="login-header">
-                    <h3>
-                      {!isDoctor ? "Patient Register" : "Doctor Register"}
-                      <a
-                        className="text-[#0DE2FE] cursor-pointer"
-                        onClick={() => SetIsDoctor()}
-                      >
-                        {!isDoctor ? "Are you a Doctor?" : "Not a Doctor?"}
-                      </a>
-                    </h3>
+                    <h3>Patient Register</h3>
                   </div>
 
                   <form onSubmit={registerUser}>
@@ -123,11 +104,7 @@ function Register() {
                       </Link>
                     </div>
                     <button
-                      className={
-                        !isDoctor
-                          ? "btn btn-primary  bg-[#09E5AB] w-100 w-100 btn-lg login-btn"
-                          : "btn btn-primary  bg-[#5badd1] w-100 w-100 btn-lg login-btn"
-                      }
+                      className="btn btn-primary  bg-[#09E5AB] w-100 w-100 btn-lg login-btn"
                       type="submit"
                     >
                       Signup
